@@ -165,6 +165,15 @@ $(document).ready(function() {
         $(this).parent().toggleClass('open');
     });
 
+    $('.authors-letters a').click(function(e) {
+        var curLetter = $(this).html();
+        var curBlock = $('.authors-letter-title:contains("' + curLetter + '")').parent();
+        if (curBlock.length == 1) {
+            $('html, body').animate({'scrollTop': curBlock.offset().top});
+        }
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
