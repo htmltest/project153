@@ -146,6 +146,7 @@ $(document).ready(function() {
         var curLi = $(this).parent();
         if (curLi.find('ul').length > 0) {
             curLi.toggleClass('open');
+            $('header').css({'margin-bottom': $('.content-side').outerHeight(true)});
             e.preventDefault();
         }
     });
@@ -170,6 +171,25 @@ $(document).ready(function() {
         var curBlock = $('.authors-letter-title:contains("' + curLetter + '")').parent();
         if (curBlock.length == 1) {
             $('html, body').animate({'scrollTop': curBlock.offset().top});
+        }
+        e.preventDefault();
+    });
+
+    $('.content-side-menu-mobile a').click(function(e) {
+        var curLink = $(this);
+        if (curLink.hasClass('active')) {
+            curLink.removeClass('active');
+            $('.content-side .content-block.visible').removeClass('visible');
+            $('.content-side').removeClass('visible');
+            $('header').css({'margin-bottom': 0});
+        } else {
+            $('.content-side-menu-mobile a.active').removeClass('active');
+            curLink.addClass('active');
+            var curIndex = $('.content-side-menu-mobile a').index(curLink);
+            $('.content-side').addClass('visible');
+            $('.content-side .content-block.visible').removeClass('visible');
+            $('.content-side .content-block').eq(curIndex).addClass('visible');
+            $('header').css({'margin-bottom': $('.content-side').outerHeight(true)});
         }
         e.preventDefault();
     });
