@@ -1015,9 +1015,13 @@ header {height:200px; background:#2c6573; color:#fff; position:relative; z-index
     .archive-year {margin:41px 0 0 0}
     .archive-year:first-child {margin:0}
     .archive-year span {font-size:20px; line-height:30px; padding:0 17px 0 0}
-    .archive-item-inner {padding:32px 30px 30px 72px; font-size:20px; line-height:24px; color:#1a1a1a}
+    .archive-item-inner {padding:32px 80px 30px 72px; font-size:20px; line-height:24px; color:#1a1a1a}
     .archive-item-inner::before {width:24px; height:29px; background-size:100%; left:30px; top:29px}
-    .archive-item .download-link {display:none}
+    .archive-item .download-link {right:19px; top:22px; width:40px; height:40px; padding:0; margin:0; border:none; font-size:0; line-height:0; letter-spacing:-1px; background:url(../images/archive-item-download.svg) no-repeat}
+    .archive-item .download-link:hover,
+    .archive-item .download-link:active {background:url(../images/archive-item-download.svg) no-repeat}
+    .archive-item .download-link::before {display:none}
+    .archive-item .download-link::after {display:none}
 }
 
 .article-section a {display:inline-block; vertical-align:top; text-decoration:none; height:36px; border-radius:2px; background:#eaf0f1; color:#232323; font-weight:normal; font-size:12px; line-height:36px; padding:0 15px; text-transform:uppercase; letter-spacing:0.05em}
